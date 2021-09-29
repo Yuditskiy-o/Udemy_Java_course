@@ -15,18 +15,20 @@ public class Employee {
         this.department = department;
     }
 
-    void doubleSalary() {
-        double newSalary = salary * 2;
-        System.out.println(newSalary);
+    int doubleSalary() {
+        return salary * 2;
     }
 }
 
 class EmployeeTest {
     public static void main(String[] args) {
-        Employee employee1 = new Employee(1, "Petrov", 25, 75000, "HR");
-        Employee employee2 = new Employee(2, "Sidorov", 40, 150000, "Finance");
+        Employee employee1 = new Employee(1, "Петров", 25, 75000, "HR");
+        Employee employee2 = new Employee(2, "Сидоров", 40, 150000, "Finance");
 
         employee1.doubleSalary();
+        System.out.println("Новая зарплата " + employee1.surname + "а равна " + employee1.doubleSalary() + ".");
+
         employee2.doubleSalary();
+        System.out.println("Новая зарплата " + employee2.surname + "а равна " + employee2.doubleSalary() + ".");
     }
 }
