@@ -9,6 +9,27 @@ public class Student {
     double averageRatingEco;
     double averageRatingLang;
 
+    public Student(int studentID1, String name1, String surname1, int year1, double averageRatingMath1,
+                   double averageRatingEco1, double averageRatingLang1) {
+        this.studentID = studentID1;
+        this.name = name1;
+        this.surname = surname1;
+        this.year = year1;
+        this.averageRatingMath = averageRatingMath1;
+        this.averageRatingEco = averageRatingEco1;
+        this.averageRatingLang = averageRatingLang1;
+    }
+
+    Student(int studentID2, String name2, String surname2, int year2) {
+        this.studentID = studentID2;
+        this.name = name2;
+        this.surname = surname2;
+        this.year = year2;
+    }
+
+    Student() {
+    }
+
     void viewInfo() {
         double finalAverage = (averageRatingMath + averageRatingEco + averageRatingLang) / 3;
 
@@ -19,34 +40,14 @@ public class Student {
 
 class StudentTest {
     public static void main(String[] args) {
-        Student st1 = new Student();
-        st1.studentID = 1;
-        st1.name = "Vasiliy";
-        st1.surname = "Ivanov";
-        st1.year = 2021;
-        st1.averageRatingMath = 4.2;
-        st1.averageRatingEco = 3.5;
-        st1.averageRatingLang = 4.3;
+        Student st1 = new Student(1, "Ivan", "Petrov", 2021, 4.2,
+                3.5, 4.1);
         st1.viewInfo();
 
-        Student st2 = new Student();
-        st2.studentID = 2;
-        st2.name = "Ivan";
-        st2.surname = "Petrov";
-        st2.year = 2021;
-        st2.averageRatingMath = 4.1;
-        st2.averageRatingEco = 3.6;
-        st2.averageRatingLang = 4.3;
+        Student st2 = new Student(2, "Vladimir", "Sidorov", 2021);
         st2.viewInfo();
 
         Student st3 = new Student();
-        st3.studentID = 3;
-        st3.name = "Sergey";
-        st3.surname = "Sidorov";
-        st3.year = 2021;
-        st3.averageRatingMath = 4.1;
-        st3.averageRatingEco = 4.0;
-        st3.averageRatingLang = 4.5;
         st3.viewInfo();
     }
 }
