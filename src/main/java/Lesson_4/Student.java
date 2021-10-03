@@ -11,20 +11,17 @@ public class Student {
 
     public Student(int studentID1, String name1, String surname1, int year1, double averageRatingMath1,
                    double averageRatingEco1, double averageRatingLang1) {
-        this.studentID = studentID1;
-        this.name = name1;
-        this.surname = surname1;
-        this.year = year1;
-        this.averageRatingMath = averageRatingMath1;
-        this.averageRatingEco = averageRatingEco1;
-        this.averageRatingLang = averageRatingLang1;
+        studentID = studentID1;
+        name = name1;
+        surname = surname1;
+        year = year1;
+        averageRatingMath = averageRatingMath1;
+        averageRatingEco = averageRatingEco1;
+        averageRatingLang = averageRatingLang1;
     }
 
     Student(int studentID2, String name2, String surname2, int year2) {
-        this.studentID = studentID2;
-        this.name = name2;
-        this.surname = surname2;
-        this.year = year2;
+        this(studentID2, name2, surname2, year2, 0, 0, 0);
     }
 
     Student() {
@@ -45,9 +42,13 @@ class StudentTest {
         st1.viewInfo();
 
         Student st2 = new Student(2, "Vladimir", "Sidorov", 2021);
+        st2.averageRatingMath = 4.2;
+        st2.averageRatingEco = 4.1;
+        st2.averageRatingLang = 4.0;
         st2.viewInfo();
 
-        Student st3 = new Student();
+        Student st3 = new Student(3, "Anton", "Alekseev", 2021, 4.1,
+                3.9, 4.1);
         st3.viewInfo();
     }
 }

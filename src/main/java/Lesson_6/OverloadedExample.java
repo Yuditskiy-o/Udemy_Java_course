@@ -2,24 +2,33 @@ package Lesson_6;
 
 public class OverloadedExample {
 
-    void sum() {
-        System.out.println("Нет параметров для вычисления, сумма равна 0");
+    int sum() {
+        int result = 0;
+        System.out.println("Сумма равна "+ result);
+        return result;
     }
 
-    void sum(int a) {
-        System.out.println(a);
+    int sum(int a) {
+        int result1 = a;
+        System.out.println("Сумма равна "+ result1);
+        return result1;
     }
 
-    void sum(int a, int b) {
-        System.out.println(a + b);
+    int sum(int b, int c) {
+        int result2 = b + c;
+        System.out.println("Сумма равна "+ result2);
+        return result2;
     }
 
-    void sum(int a, int b, int c) {
-        System.out.println(a + b + c);
+    int sum(int d, int e, int f) {
+        int result3 = d + e + f;
+        System.out.println("Сумма равна "+ result3);
+        return result3;
     }
 
-    void sum(int a, int b, int c, int d) {
-        System.out.println(a + b + c + d);
+    void sum(int g, int h, int i, int j) {
+        int result4 = g + h + i + j;
+        System.out.println("Сумма равна "+ result4);
     }
 }
 
@@ -27,15 +36,11 @@ class OverloadedExampleTest {
 
     public static void main(String[] args) {
         OverloadedExample oE = new OverloadedExample();
-        int a = 1;
-        int b = 2;
-        int c = 3;
-        int d = 4;
 
         oE.sum();
-        oE.sum(a);
-        oE.sum(a, b);
-        oE.sum(a, b, c);
-        oE.sum(a, b, c, d);
+        oE.sum(1);
+        oE.sum(1, 2);
+        oE.sum(1, 2, 3);
+        oE.sum(1, 2, 3, 4);
     }
 }
