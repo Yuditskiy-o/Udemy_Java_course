@@ -2,33 +2,34 @@ package Lesson_5;
 
 public class Employee {
     int id;
-    String surname;
-    int age;
-    int salary;
-    String department;
+    public String surname;
+    public double salary;
 
-    public Employee(int id, String surname, int age, int salary, String department) {
-        this.id = id;
-        this.surname = surname;
-        this.age = age;
-        this.salary = salary;
-        this.department = department;
+    public Employee(int id2) {
+        id = id2;
     }
 
-    int doubleSalary() {
+    Employee(String surname2) {
+        surname = surname2;
+    }
+
+    public Employee(double salary2) {
+        salary = salary2;
+    }
+
+    double doubleSalary() {
         return salary * 2;
     }
-}
 
-class EmployeeTest {
-    public static void main(String[] args) {
-        Employee employee1 = new Employee(1, "Петров", 25, 75000, "HR");
-        Employee employee2 = new Employee(2, "Сидоров", 40, 150000, "Finance");
+    public void getID() {
+        System.out.println("ID = " + id);
+    }
 
-        employee1.doubleSalary();
-        System.out.println("Новая зарплата " + employee1.surname + "а равна " + employee1.doubleSalary() + ".");
+    public void getSurname() {
+        System.out.println("Surname = " + surname);
+    }
 
-        employee2.doubleSalary();
-        System.out.println("Новая зарплата " + employee2.surname + "а равна " + employee2.doubleSalary() + ".");
+    public void getSalary() {
+        System.out.println("Salary = " + salary);
     }
 }
